@@ -3,15 +3,12 @@
 /.env.local
 /.env.local.php
 /.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
 /vendor/
 ###< symfony/framework-bundle ###
 
-###> phpstorm ###
+###> miscellaneous ###
 /.idea
-###< phpstorm ###
-###> symfony/web-server-bundle ###
-/.web-server-pid
-###< symfony/web-server-bundle ###
-./.php_cs.cache
+###< miscellaneous ###
