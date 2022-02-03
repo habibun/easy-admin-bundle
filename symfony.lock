@@ -1,4 +1,13 @@
 {
+    "composer/pcre": {
+        "version": "1.0.1"
+    },
+    "composer/semver": {
+        "version": "3.2.7"
+    },
+    "composer/xdebug-handler": {
+        "version": "3.0.1"
+    },
     "doctrine/annotations": {
         "version": "1.13",
         "recipe": {
@@ -87,8 +96,23 @@
             "ref": "b131e6cbfe1b898a508987851963fff485986285"
         }
     },
+    "friendsofphp/php-cs-fixer": {
+        "version": "3.5",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "be2103eb4a20942e28a6dd87736669b757132435"
+        },
+        "files": [
+            ".php-cs-fixer.dist.php"
+        ]
+    },
     "nikic/php-parser": {
         "version": "v4.13.2"
+    },
+    "php-cs-fixer/diff": {
+        "version": "v2.0.2"
     },
     "psr/cache": {
         "version": "3.0.0"
@@ -240,6 +264,9 @@
     },
     "symfony/polyfill-uuid": {
         "version": "v1.24.0"
+    },
+    "symfony/process": {
+        "version": "v6.0.3"
     },
     "symfony/property-access": {
         "version": "v6.0.3"

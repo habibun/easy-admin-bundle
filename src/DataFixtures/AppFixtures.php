@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Product;
 use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -25,6 +26,12 @@ class AppFixtures extends Fixture
          $user->setRoles(['ROLE_ADMIN']);
 
          $manager->persist($user);
+
+         for ($i=1; $i <=10; $i++) {
+             $product = new Product();
+             $product->setName(sprintf('product-%d', $i));
+             $manager->persist($product);
+         }
 
         $manager->flush();
     }
