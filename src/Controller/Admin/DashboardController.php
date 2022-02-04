@@ -7,6 +7,7 @@ use App\Entity\Product;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Assets;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -21,7 +22,7 @@ class DashboardController extends AbstractDashboardController
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-         return $this->render('admin/dashboard.html.twig');
+        return $this->render('admin/dashboard.html.twig');
     }
 
     public function configureDashboard(): Dashboard
@@ -33,10 +34,10 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-         yield MenuItem::linkToCrud('User', 'fas fa-list', User::class);
-         yield MenuItem::linkToCrud('Order', 'fas fa-list', Order::class);
-         yield MenuItem::linkToCrud('Product', 'fas fa-list', Product::class);
-         yield MenuItem::LinkToUrl('Homepage', 'fas fa-home', $this->generateUrl('homepage'));
+        yield MenuItem::linkToCrud('User', 'fas fa-list', User::class);
+        yield MenuItem::linkToCrud('Order', 'fas fa-list', Order::class);
+        yield MenuItem::linkToCrud('Product', 'fas fa-list', Product::class);
+        yield MenuItem::LinkToUrl('Homepage', 'fas fa-home', $this->generateUrl('homepage'));
     }
 
     public function configureActions(): Actions
@@ -45,5 +46,10 @@ class DashboardController extends AbstractDashboardController
             ->add(Crud::PAGE_INDEX, Action::DETAIL);
     }
 
-
+    public function configureAssets(): Assets
+    {
+        return parent::configureAssets()
+            ->addCssFile('global.css')
+            ;
+    }
 }
