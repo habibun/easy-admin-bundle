@@ -36,6 +36,7 @@ class DashboardController extends AbstractDashboardController
          yield MenuItem::linkToCrud('User', 'fas fa-list', User::class);
          yield MenuItem::linkToCrud('Order', 'fas fa-list', Order::class);
          yield MenuItem::linkToCrud('Product', 'fas fa-list', Product::class);
+         yield MenuItem::LinkToUrl('Homepage', 'fas fa-home', $this->generateUrl('homepage'));
     }
 
     public function configureActions(): Actions
