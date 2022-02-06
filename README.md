@@ -1,5 +1,5 @@
-Documentation
--------------
+easy-admin-bundle
+Implements EasyAdminBundle in symfony
 
 | Repository Branch | EasyAdmin Version | Symfony Version | PHP Version     |
 |-------------------|-------------------|-----------------|-----------------|
