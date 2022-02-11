@@ -27,6 +27,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean')]
     private ?bool $enabled;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $avatar;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -107,5 +110,29 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->enabled = $enabled;
 
         return $this;
+    }
+
+    public function getAvatar(): ?string
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar(string $avatar): self
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    public function getAvatarUrl(): ?string
+    {
+        if (!$this->avatar) {
+            return null;
+        }
+        if (false !== strpos($this->avatar, '/')) {
+            return $this->avatar;
+        }
+
+        return sprintf('/uploads/avatars/%s', $this->avatar);
     }
 }

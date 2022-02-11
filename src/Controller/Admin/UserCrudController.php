@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -30,6 +31,11 @@ class UserCrudController extends AbstractCrudController
             ->allowMultipleChoices()
             ->renderExpanded()
             ->renderAsBadges()
+        ;
+        yield ImageField::new('avatar')
+            ->setBasePath('upload/user/avatar')
+            ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
+            ->setUploadDir('public/upload/user/avatar')
         ;
     }
 }
