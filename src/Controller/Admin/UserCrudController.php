@@ -4,6 +4,7 @@ namespace App\Controller\Admin;
 
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AvatarField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\ChoiceField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
@@ -21,6 +22,10 @@ class UserCrudController extends AbstractCrudController
     {
         yield IdField::new('id')
         ->hideOnForm();
+        yield AvatarField::new('avatar')
+            ->formatValue(static function ($value, User $user) {
+                return $user->getAvatarUrl();
+            });
         yield EmailField::new('email');
         yield BooleanField::new('enabled')
         ->renderAsSwitch(false);
@@ -36,6 +41,7 @@ class UserCrudController extends AbstractCrudController
             ->setBasePath('upload/user/avatar')
             ->setUploadedFileNamePattern('[slug]-[timestamp].[extension]')
             ->setUploadDir('public/upload/user/avatar')
+            ->onlyOnForms()
         ;
     }
 }

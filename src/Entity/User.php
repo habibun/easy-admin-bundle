@@ -133,6 +133,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
             return $this->avatar;
         }
 
-        return sprintf('/uploads/avatars/%s', $this->avatar);
+        return sprintf('/upload/user/avatar/%s', $this->avatar);
     }
 }
