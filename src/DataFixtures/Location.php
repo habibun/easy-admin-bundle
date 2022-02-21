@@ -17,6 +17,7 @@ class Location extends Fixture
             $location = (new LocationEntity())
             ->setName(sprintf('Location %d', $i))
                 ->setEnabled($faker->boolean())
+                ->setDescription($faker->sentence())
             ;
 
             $manager->persist($location);

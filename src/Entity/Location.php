@@ -19,6 +19,9 @@ class Location
     #[ORM\Column(type: 'boolean')]
     private $enabled = true;
 
+    #[ORM\Column(type: 'text', nullable: true)]
+    private $description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -49,6 +52,18 @@ class Location
     public function setEnabled(bool $enabled): self
     {
         $this->enabled = $enabled;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(?string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
