@@ -4,6 +4,9 @@ namespace App\Controller\Admin;
 
 use App\Entity\Order;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 
 class OrderCrudController extends AbstractCrudController
 {
@@ -12,14 +15,14 @@ class OrderCrudController extends AbstractCrudController
         return Order::class;
     }
 
-    /*
+
     public function configureFields(string $pageName): iterable
     {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
+        yield IdField::new('id');
+        yield AssociationField::new('location');
+        yield Field::new('date');
+        yield Field::new('totalPrice')
+            ->setTextAlign('right');
     }
-    */
+
 }

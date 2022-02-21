@@ -23,6 +23,13 @@ class Order
     #[ORM\OneToMany(mappedBy: 'order', targetEntity: Product::class, orphanRemoval: true)]
     private $products;
 
+    #[ORM\ManyToOne(targetEntity: Location::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private $location;
+
+    #[ORM\Column(type: 'decimal', precision: 10, scale: 2)]
+    private $totalPrice;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -71,6 +78,30 @@ class Order
                 $product->setOrder(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLocation(): ?Location
+    {
+        return $this->location;
+    }
+
+    public function setLocation(?Location $location): self
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    public function getTotalPrice(): ?string
+    {
+        return $this->totalPrice;
+    }
+
+    public function setTotalPrice(string $totalPrice): self
+    {
+        $this->totalPrice = $totalPrice;
 
         return $this;
     }
