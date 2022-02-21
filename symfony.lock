@@ -96,6 +96,9 @@
             "ref": "b131e6cbfe1b898a508987851963fff485986285"
         }
     },
+    "fakerphp/faker": {
+        "version": "v1.19.0"
+    },
     "friendsofphp/php-cs-fixer": {
         "version": "3.5",
         "recipe": {

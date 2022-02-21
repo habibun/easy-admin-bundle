@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Order;
+use Doctrine\ORM\QueryBuilder;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
@@ -15,14 +16,20 @@ class OrderCrudController extends AbstractCrudController
         return Order::class;
     }
 
-
     public function configureFields(string $pageName): iterable
     {
         yield IdField::new('id');
-        yield AssociationField::new('location');
+        yield AssociationField::new('location')
+            ->autocomplete()
+            ->formatValue(static function ($value, Order $order) {
+                return sprintf('%d-%s', $order->getLocation()->getId(), $order->getLocation()->getName());
+            })
+            ->setQueryBuilder(function (QueryBuilder $queryBuilder) {
+                $queryBuilder->andWhere('entity.enabled = :enabled')
+                    ->setParameter('enabled', true);
+            });
         yield Field::new('date');
         yield Field::new('totalPrice')
             ->setTextAlign('right');
     }
-
 }

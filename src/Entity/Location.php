@@ -16,6 +16,9 @@ class Location
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
+    #[ORM\Column(type: 'boolean')]
+    private $enabled = true;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -36,6 +39,18 @@ class Location
     public function __toString(): string
     {
         return $this->getName();
+    }
+
+    public function getEnabled(): ?bool
+    {
+        return $this->enabled;
+    }
+
+    public function setEnabled(bool $enabled): self
+    {
+        $this->enabled = $enabled;
+
+        return $this;
     }
 
 }
