@@ -18,7 +18,8 @@ class OrderCrudController extends AbstractCrudController
 
     public function configureFields(string $pageName): iterable
     {
-        yield IdField::new('id');
+        yield IdField::new('id')
+            ->hideOnForm();
         yield AssociationField::new('location')
             ->autocomplete()
             ->formatValue(static function ($value, Order $order) {
@@ -28,6 +29,11 @@ class OrderCrudController extends AbstractCrudController
                 $queryBuilder->andWhere('entity.enabled = :enabled')
                     ->setParameter('enabled', true);
             });
+        yield AssociationField::new('products')
+            ->autocomplete()
+//            ->setFormTypeOption('choice_label', 'original.name')
+//        ->setFormTypeOption('by_reference', false)
+        ;
         yield Field::new('date');
         yield Field::new('totalPrice')
             ->setTextAlign('right');

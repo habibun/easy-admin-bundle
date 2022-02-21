@@ -32,12 +32,12 @@ class Product
         return $this->id;
     }
 
-    public function getOriginal(): ?Product
+    public function getOriginal(): ?OriginalProduct
     {
         return $this->original;
     }
 
-    public function setOriginal(?Product $original): self
+    public function setOriginal(?OriginalProduct $original): self
     {
         $this->original = $original;
 
@@ -66,5 +66,10 @@ class Product
         $this->order = $orderM;
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return sprintf('%d-%s', $this->getOrder()->getId(), $this->getOriginal()->getName());
     }
 }
