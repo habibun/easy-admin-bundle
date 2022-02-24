@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AvatarField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
@@ -26,7 +27,8 @@ class UserCrudController extends AbstractCrudController
             ->formatValue(static function ($value, User $user) {
                 return $user->getAvatarUrl();
             });
-        yield EmailField::new('email');
+        yield EmailField::new('email')
+        ->setSortable(false);
         yield BooleanField::new('enabled')
         ->renderAsSwitch(false);
 
@@ -43,5 +45,14 @@ class UserCrudController extends AbstractCrudController
             ->setUploadDir('public/upload/user/avatar')
             ->onlyOnForms()
         ;
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+        return parent::configureCrud($crud)
+            ->setDefaultSort([
+                'enabled' => 'DESC',
+            ])
+            ;
     }
 }

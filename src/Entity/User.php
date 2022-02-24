@@ -25,7 +25,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private string $password;
 
     #[ORM\Column(type: 'boolean')]
-    private ?bool $enabled = false;
+    private ?bool $enabled = true;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $avatar;

@@ -54,4 +54,11 @@ class DashboardController extends AbstractDashboardController
             ->addCssFile('global.css')
             ;
     }
+
+    public function configureCrud(): Crud
+    {
+        return parent::configureCrud()
+            ->setDefaultSort(['id' => 'DESC',
+            ]);
+    }
 }
