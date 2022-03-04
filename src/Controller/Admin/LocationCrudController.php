@@ -8,7 +8,6 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
-use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 
 class LocationCrudController extends AbstractCrudController
 {
@@ -23,7 +22,16 @@ class LocationCrudController extends AbstractCrudController
             IdField::new('id'),
             Field::new('name'),
             EnabledField::new('enabled'),
-            TextEditorField::new('description'),
+            TextareaField::new('description')
+                ->setFormTypeOptions([
+                    'row_attr' => [
+                        'data-controller' => 'snarkdown',
+                    ],
+                    'attr' => [
+                        'data-snarkdown-target' => 'input',
+                        'data-action' => 'snarkdown#render',
+                    ],
+                ]),
         ];
     }
 }
