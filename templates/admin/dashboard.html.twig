@@ -1,10 +1,16 @@
 {% extends '@!EasyAdmin/layout.html.twig' %}
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
             {{ encore_entry_link_tags('admin') }}
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
             {{ encore_entry_script_tags('admin') }}
         {% endblock %}
+
+
+{% block main %}
+
+    <h1>Welcome to easy admin bundle</h1>
+
+    {{ render_chart(chart) }}
+{% endblock main %}
