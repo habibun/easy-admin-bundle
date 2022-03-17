@@ -135,4 +135,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return sprintf('/upload/user/avatar/%s', $this->avatar);
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function __toString(): string
+    {
+        return $this->getUserIdentifier();
+    }
+
 }

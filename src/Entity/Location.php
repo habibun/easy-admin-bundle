@@ -22,6 +22,10 @@ class Location
     #[ORM\Column(type: 'text', nullable: true)]
     private $description;
 
+    #[ORM\ManyToOne(targetEntity: User::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private $updatedBy;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -68,4 +72,15 @@ class Location
         return $this;
     }
 
+    public function getUpdatedBy()
+    {
+        return $this->updatedBy;
+    }
+
+    public function setUpdatedBy($updatedBy)
+    {
+        $this->updatedBy = $updatedBy;
+
+        return $this;
+    }
 }

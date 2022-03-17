@@ -26,6 +26,7 @@ class User extends Fixture
         $password = $this->hasher->hashPassword($user, 'admin');
         $user->setPassword($password);
         $manager->persist($user);
+        $this->addReference(sprintf('%s#%d', self::class, 1), $user);
 
         // normal user
         $user = (new UserEntity())
