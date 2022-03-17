@@ -28,7 +28,7 @@ class DashboardController extends AbstractDashboardController
         $this->chartBuilder = $chartBuilder;
     }
 
-    #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_USER')]
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {

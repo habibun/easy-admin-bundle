@@ -24,7 +24,7 @@ class LocationCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id'),
-            Field::new('name'),
+            Field::new('name')->setPermission('ROLE_MODERATOR'),
             EnabledField::new('enabled'),
             TextareaField::new('description')
                 ->setFormTypeOptions([

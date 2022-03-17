@@ -18,6 +18,7 @@ class User extends Fixture
 
     public function load(ObjectManager $manager): void
     {
+        // admin user
         $user = (new UserEntity())
         ->setEmail('admin@localhost.com')
         ->setRoles(['ROLE_ADMIN']);
@@ -26,15 +27,23 @@ class User extends Fixture
         $user->setPassword($password);
         $manager->persist($user);
 
-        for ($i = 1; $i <= 10; ++$i) {
-            $user = (new UserEntity())
-                ->setEmail(sprintf('user%d@localhost.com', $i))
-                ->setRoles(['ROLE_USER']);
+        // normal user
+        $user = (new UserEntity())
+            ->setEmail('user@localhost.com')
+            ->setRoles(['ROLE_USER']);
 
-            $password = $this->hasher->hashPassword($user, sprintf('user%d', $i));
-            $user->setPassword($password);
-            $manager->persist($user);
-        }
+        $password = $this->hasher->hashPassword($user, 'user');
+        $user->setPassword($password);
+        $manager->persist($user);
+
+        // moderator user
+        $user = (new UserEntity())
+            ->setEmail('moderator@localhost.com')
+            ->setRoles(['ROLE_MODERATOR']);
+
+        $password = $this->hasher->hashPassword($user, 'moderator');
+        $user->setPassword($password);
+        $manager->persist($user);
 
         $manager->flush();
     }

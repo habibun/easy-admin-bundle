@@ -24,8 +24,8 @@ class UserCrudController extends AbstractCrudController
         yield IdField::new('id')
         ->hideOnForm();
         yield AvatarField::new('avatar')
-            ->formatValue(static function ($value, User $user) {
-                return $user->getAvatarUrl();
+            ->formatValue(static function ($value, ?User $user) {
+                return $user?->getAvatarUrl();
             });
         yield EmailField::new('email')
         ->setSortable(false);
@@ -53,6 +53,7 @@ class UserCrudController extends AbstractCrudController
             ->setDefaultSort([
                 'enabled' => 'DESC',
             ])
+            ->setEntityPermission('ADMIN_USER_EDIT')
             ;
     }
 }
