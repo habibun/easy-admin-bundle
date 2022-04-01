@@ -7,6 +7,7 @@ use App\Entity\Location;
 use Doctrine\ORM\EntityManagerInterface;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
@@ -21,7 +22,7 @@ class LocationCrudController extends AbstractCrudController
     private Security $security;
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function __construct(Security $security)
     {
@@ -50,21 +51,34 @@ class LocationCrudController extends AbstractCrudController
                     ],
                 ]),
             AssociationField::new('updatedBy'),
-
         ];
     }
 
     public function configureActions(Actions $actions): Actions
     {
         return parent::configureActions($actions)
+            ->update(Crud::PAGE_INDEX, Action::DELETE, static function (Action $action) {
+                $action->displayIf(static function (Location $location) {
+                    return $location->getEnabled();
+                });
+
+                return $action;
+            })
             ->setPermission(Action::INDEX, 'ROLE_MODERATOR');
     }
 
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
-
         $entityInstance->setUpdatedBy($this->security->getUser());
         parent::updateEntity($entityManager, $entityInstance);
     }
 
+    public function deleteEntity(EntityManagerInterface $entityManager, $entityInstance): void
+    {
+        if ($entityInstance->getIsApproved()) {
+            throw new \Exception('Deleting approved questions is forbidden!');
+        }
+
+        parent::deleteEntity($entityManager, $entityInstance);
+    }
 }
