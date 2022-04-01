@@ -56,6 +56,16 @@ class LocationCrudController extends AbstractCrudController
 
     public function configureActions(Actions $actions): Actions
     {
+        $viewAction = Action::new('view')
+            ->linkToUrl(function(Location $location) {
+                return $this->generateUrl('login', [
+                    'id' => $location->getId(),
+                ]);
+            })
+            ->addCssClass('btn btn-success')
+            ->setIcon('fa fa-eye')
+            ->setLabel('View on site');
+
         return parent::configureActions($actions)
             ->update(Crud::PAGE_INDEX, Action::DELETE, static function (Action $action) {
                 $action->displayIf(static function (Location $location) {
@@ -64,7 +74,9 @@ class LocationCrudController extends AbstractCrudController
 
                 return $action;
             })
-            ->setPermission(Action::INDEX, 'ROLE_MODERATOR');
+            ->setPermission(Action::INDEX, 'ROLE_MODERATOR')
+            ->add(Crud::PAGE_DETAIL, $viewAction)
+            ;
     }
 
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
