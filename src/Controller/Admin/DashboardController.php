@@ -48,15 +48,26 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::section('Content');
         yield MenuItem::linkToCrud('User', 'fas fa-list', User::class)
         ->setPermission('ROLE_MODERATOR');
-        yield MenuItem::linkToCrud('Location', 'fas fa-list', Location::class)
-        ->setController(LocationCrudController::class);
-        yield MenuItem::linkToCrud('Location Enabled', 'fas fa-list', Location::class)
-        ->setController(LocationEnabledController::class);
+        Yield MenuItem::subMenu('Location', 'fas fa-list')
+            ->setSubItems(
+                [
+                    MenuItem::linkToCrud('Location', 'fas fa-list', Location::class)
+                        ->setController(LocationCrudController::class),
+                    MenuItem::linkToCrud('Location Enabled', 'fas fa-list', Location::class)
+                ->setController(LocationEnabledController::class)
+                ]
+            );
+
         yield MenuItem::linkToCrud('Order', 'fas fa-list', Order::class);
         yield MenuItem::linkToCrud('Product', 'fas fa-list', Product::class);
+
+        yield MenuItem::section();
         yield MenuItem::LinkToUrl('Homepage', 'fas fa-home', $this->generateUrl('homepage'));
+        yield MenuItem::linkToUrl('StackOverflow', 'fab fa-stack-overflow', 'https://stackoverflow.com')
+            ->setLinkTarget('_blank');
     }
 
     public function configureActions(): Actions
