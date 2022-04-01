@@ -57,7 +57,7 @@ class LocationCrudController extends AbstractCrudController
     public function configureActions(Actions $actions): Actions
     {
         $viewAction = Action::new('view')
-            ->linkToUrl(function(Location $location) {
+            ->linkToUrl(function (Location $location) {
                 return $this->generateUrl('login', [
                     'id' => $location->getId(),
                 ]);
@@ -65,6 +65,15 @@ class LocationCrudController extends AbstractCrudController
             ->addCssClass('btn btn-success')
             ->setIcon('fa fa-eye')
             ->setLabel('View on site');
+        $approveAction = Action::new('approve')
+            ->setTemplatePath('admin/approve_action.html.twig')
+            ->linkToCrudAction('approve')
+            ->addCssClass('btn btn-success')
+            ->setIcon('fa fa-check-circle')
+            ->displayAsButton()
+            ->displayIf(static function (Location $location): bool {
+                return !$location->getEnabled();
+            });
 
         return parent::configureActions($actions)
             ->update(Crud::PAGE_INDEX, Action::DELETE, static function (Action $action) {
@@ -76,6 +85,8 @@ class LocationCrudController extends AbstractCrudController
             })
             ->setPermission(Action::INDEX, 'ROLE_MODERATOR')
             ->add(Crud::PAGE_DETAIL, $viewAction)
+            ->add(Crud::PAGE_INDEX, $viewAction)
+            ->add(Crud::PAGE_DETAIL, $approveAction)
             ;
     }
 
