@@ -10,5 +10,18 @@
 
 <div class="example-wrapper">
     <a href="{{ path('admin') }}"> Admin </a>
+
+
+{#    {% if is_granted('ROLE_ADMIN') %}#}
+{#        <a class="text-white" href="{{ ea_url()#}
+{#            .setController('App\\Controller\\Admin\\UserCrudController')#}
+{#            .setAction('edit')#}
+{#            .setEntityId(question.id)#}
+{#        }}">#}
+{#            <span class="fa fa-edit"></span>#}
+{#        </a>#}
+{#    {% endif %}#}
+
+
 </div>
 {% endblock %}
