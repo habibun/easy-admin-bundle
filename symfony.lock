@@ -111,6 +111,9 @@
             ".php-cs-fixer.dist.php"
         ]
     },
+    "handcraftedinthealps/goodby-csv": {
+        "version": "1.4.0"
+    },
     "nikic/php-parser": {
         "version": "v4.13.2"
     },
