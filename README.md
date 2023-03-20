@@ -58,22 +58,32 @@ width="50%"
 - [Symfony CLI][symfony_cli], [PHP][php], [Composer][composer], [Git][git], [MySQL][mysql]
 
 ### Installation
-Clone the repository using the command:
-```git clone git@github.com:habibun/easy-admin-bundle.git```
+Clone the repository using the command:  
+```bash 
+git clone git@github.com:habibun/easy-admin-bundle.git
+```
 
 Navigate into the cloned directory:
-```cd easy-admin-bundle```
+```bash 
+cd easy-admin-bundle
+```
 
 Checkout: 
-```git checkout v2```
+```bash 
+git checkout v2
+```
 
 #### Manual Instruction
 
 Install the required dependencies using Composer:
-```symfony composer install```
+```bash 
+symfony composer install
+```
 
 Create .env.local file:
-`	cp -u -p .env .env.local`
+```bash 	
+cp -u -p .env .env.local
+```
 
 Configure the database connection in the .env.local file:
 `DATABASE_URL=mysql://db_user:db_password@db_host/db_name`
