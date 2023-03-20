@@ -12,7 +12,7 @@ Please check the [projects](#projects) section for more details.
 
 ## Projects
 
-<details><summary>xx</summary>  
+<details><summary>Simple application using EasyAdminBundle v2 </summary>  
 <p>  
 
 <img
@@ -21,9 +21,9 @@ alt="xx"
 width="50%"
 />
 
-**Code:** xx
+**Code:** https://github.com/habibun/easy-admin-bundle/tree/v2
 **Resources:**
-- [xxx](xx)
+- ~
   <br/>
 
 
@@ -32,6 +32,32 @@ width="50%"
 git clone git@github.com:habibun/easy-admin-bundle.git
 cd easy-admin-bundle
 git checkout v2
+symfony composer install
+```
+
+</p>
+</details>
+
+<details><summary>Simple application using EasyAdminBundle v4 </summary>  
+<p>  
+
+<img
+src="url"
+alt="xx"
+width="50%"
+/>
+
+**Code:** https://github.com/habibun/easy-admin-bundle/tree/v4
+**Resources:**
+- ~
+  <br/>
+
+
+#### Installation
+```bash
+git clone git@github.com:habibun/easy-admin-bundle.git
+cd easy-admin-bundle
+git checkout v4
 symfony composer install
 ```
 
