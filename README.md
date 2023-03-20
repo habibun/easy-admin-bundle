@@ -84,7 +84,7 @@ Distributed under the MIT License. See **[LICENSE][license]** for more informati
 
 
 [//]: # (Links)
-[license]: https://github.com/habibun/symfony-api-platform/blob/main/LICENSE
+[license]: https://github.com/habibun/easy-admin-bundle/blob/main/LICENSE
 [symfony_website]: https://symfony.com/
 
 [easy_admin_github]: https://github.com/EasyCorp/EasyAdminBundle
