@@ -59,10 +59,10 @@ width="50%"
 
 ### Installation
 Clone the repository using the command:
-`git clone git@github.com:habibun/easy-admin-bundle.git`
+```git clone git@github.com:habibun/easy-admin-bundle.git```
 
 Navigate into the cloned directory:
-`cd easy-admin-bundle`
+```cd easy-admin-bundle```
 
 Checkout: 
 ```git checkout v2```
