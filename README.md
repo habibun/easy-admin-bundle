@@ -11,8 +11,8 @@ Please check the [projects](#projects) section for more details.
 
 
 ## Projects
-<details><summary>Simple application using EasyAdminBundle v4 </summary>  
-<p>
+<details><summary>Simple application using EasyAdminBundle v4</summary>  
+<p>  
 
 <img
 src="https://user-images.githubusercontent.com/5810350/226254914-a20cb91d-da7a-4417-81d4-4733b749986c.png"
@@ -20,11 +20,8 @@ alt="easy admin bundle v4"
 width="50%"
 />
 
-**Code:** https://github.com/habibun/easy-admin-bundle/tree/v4
-**Resources:**
-- ~
-  <br/>
-
+**Code:** https://github.com/habibun/easy-admin-bundle/tree/v4  
+**Resources:** ~  
 
 #### Installation
 ```bash
@@ -32,13 +29,14 @@ git clone git@github.com:habibun/easy-admin-bundle.git
 cd easy-admin-bundle
 git checkout v4
 symfony composer install
+yarn install
 ```
 
 </p>
 </details>
 
 
-<details><summary>Simple application using EasyAdminBundle v2 </summary>  
+<details><summary>Simple application using EasyAdminBundle v2</summary>  
 <p>  
 
 <img
@@ -47,11 +45,8 @@ alt="easy admin bundle v2"
 width="50%"
 />
 
-**Code:** https://github.com/habibun/easy-admin-bundle/tree/v2
-**Resources:**
-- ~
-<br/>
-
+**Code:** https://github.com/habibun/easy-admin-bundle/tree/v2  
+**Resources:** ~  
 
 #### Installation
 ```bash
@@ -85,7 +80,7 @@ Distributed under the MIT License. See **[LICENSE][license]** for more informati
 [easy_admin_docs]: https://symfony.com/bundles/EasyAdminBundle/current/index.html
 
 [v4]: https://github.com/habibun/easy-admin-bundle/tree/v4
-[v4_tt]: https://github.com/habibun/symfony-api-platform/tree/v2 "xx"
+[v4_tt]: https://github.com/habibun/easy-admin-bundle/tree/v4 "Simple application using EasyAdminBundle v4"
 
 [v2]: https://github.com/habibun/easy-admin-bundle/tree/v2
-[v2_tt]: https://github.com/habibun/symfony-api-platform/tree/v2 "xx"
+[v2_tt]: https://github.com/habibun/easy-admin-bundle/tree/v2 "Simple application using EasyAdminBundle v2"
