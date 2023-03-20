@@ -4,10 +4,10 @@ Implements [EasyAdminBundle][easy_admin_github] in [Symfony][symfony_website]
 Please check the [projects](#projects) section for more details.
 
 ## Overview
-| Branch   | EasyAdmin Version | Symfony Version | PHP Version |
-|----------|-------------------|-----------------|-------------|
-| [v4][v4] | `^4.0`            | `^6.0`          | `^8.1`      | 
-| [v2][v2] | `^2.3`            | `^4.4`          | `^7.2`      |
+| Branch   | EasyAdmin Version | Symfony Version | PHP Version | Node Version |
+|----------|-------------------|-----------------|-------------|--------------|
+| [v4][v4] | `^4.0`            | `^6.0`          | `^8.1`      | `v16.13`     | 
+| [v2][v2] | `^2.3`            | `^4.4`          | `^7.2`      | `~`          |
 
 
 ## Projects
@@ -22,6 +22,9 @@ width="50%"
 
 **Code:** https://github.com/habibun/easy-admin-bundle/tree/v4  
 **Resources:** ~  
+
+#### Prerequisites
+- [Symfony CLI][symfony_cli], [PHP][php], [Composer][composer], [Git][git], [MySQL][mysql], [Node.js][node]
 
 #### Installation
 ```bash
@@ -49,6 +52,10 @@ width="50%"
 
 **Code:** https://github.com/habibun/easy-admin-bundle/tree/v2  
 **Resources:** ~  
+
+
+#### Prerequisites
+- [Symfony CLI][symfony_cli], [PHP][php], [Composer][composer], [Git][git], [MySQL][mysql]
 
 #### Installation
 ```bash
@@ -88,3 +95,10 @@ Distributed under the MIT License. See **[LICENSE][license]** for more informati
 
 [v2]: https://github.com/habibun/easy-admin-bundle/tree/v2
 [v2_tt]: https://github.com/habibun/easy-admin-bundle/tree/v2 "Simple application using EasyAdminBundle v2"
+
+[symfony_cli]: https://symfony.com/download
+[php]: https://www.php.net/
+[composer]: https://getcomposer.org/
+[git]: https://git-scm.com/
+[mysql]: https://www.mysql.com/
+[node]: https://nodejs.org/
