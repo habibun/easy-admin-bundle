@@ -1,5 +1,5 @@
 ## About The Project
-Implements [EasyAdminBundle][easy_admin_github] in symfony
+Implements [EasyAdminBundle][easy_admin_github] in [Symfony][symfony_website]
 
 Please check the [projects](#projects) section for more details.
 
