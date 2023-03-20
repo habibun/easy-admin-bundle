@@ -23,10 +23,10 @@ width="50%"
 **Code:** https://github.com/habibun/easy-admin-bundle/tree/v4  
 **Resources:** ~  
 
-#### Prerequisites
+### Prerequisites
 - [Symfony CLI][symfony_cli], [PHP][php], [Composer][composer], [Git][git], [MySQL][mysql], [Node.js][node]
 
-#### Installation
+### Installation
 ```bash
 git clone git@github.com:habibun/easy-admin-bundle.git
 cd easy-admin-bundle
@@ -54,10 +54,10 @@ width="50%"
 **Resources:** ~  
 
 
-#### Prerequisites
+### Prerequisites
 - [Symfony CLI][symfony_cli], [PHP][php], [Composer][composer], [Git][git], [MySQL][mysql]
 
-#### Installation
+### Installation
 Clone the repository using the command:
 `git clone git@github.com:habibun/easy-admin-bundle.git`
 
@@ -65,12 +65,12 @@ Navigate into the cloned directory:
 `cd easy-admin-bundle`
 
 Checkout: 
-`git checkout v2`
+```git checkout v2```
 
 #### Manual Instruction
 
 Install the required dependencies using Composer:
-`symfony composer install`
+```symfony composer install```
 
 Create .env.local file:
 `	cp -u -p .env .env.local`
