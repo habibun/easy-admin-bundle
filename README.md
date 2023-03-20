@@ -12,7 +12,7 @@ Please check the [projects](#projects) section for more details.
 
 ## Projects
 <details><summary>Simple application using EasyAdminBundle v4</summary>  
-<p>  
+<p>
 
 <img
 src="https://user-images.githubusercontent.com/5810350/226254914-a20cb91d-da7a-4417-81d4-4733b749986c.png"
@@ -33,6 +33,7 @@ yarn install
 ```
 
 </p>
+---
 </details>
 
 
