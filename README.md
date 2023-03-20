@@ -12,11 +12,11 @@ Please check the [projects](#projects) section for more details.
 
 ## Projects
 <details><summary>Simple application using EasyAdminBundle v4 </summary>  
-<p>  
+<p>
 
 <img
-src="url"
-alt="xx"
+src="https://user-images.githubusercontent.com/5810350/226254914-a20cb91d-da7a-4417-81d4-4733b749986c.png"
+alt="easy admin bundle v4"
 width="50%"
 />
 
@@ -42,15 +42,15 @@ symfony composer install
 <p>  
 
 <img
-src="url"
-alt="xx"
+src="https://user-images.githubusercontent.com/5810350/226255064-bba19bae-ac88-4ea3-a010-97abb549118c.png"
+alt="easy admin bundle v2"
 width="50%"
 />
 
 **Code:** https://github.com/habibun/easy-admin-bundle/tree/v2
 **Resources:**
 - ~
-  <br/>
+<br/>
 
 
 #### Installation
