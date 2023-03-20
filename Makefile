@@ -21,5 +21,5 @@ start: ## start
 	symfony server:start
 
 .PHONY: log
-start: ## log
+log: ## log
 	symfony server:log
