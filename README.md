@@ -12,7 +12,6 @@ Please check the [projects](#projects) section for more details.
 
 ## Projects
 <details><summary>Simple application using EasyAdminBundle v4</summary>  
-<p>
 
 <img
 src="https://user-images.githubusercontent.com/5810350/226254914-a20cb91d-da7a-4417-81d4-4733b749986c.png"
@@ -21,28 +20,45 @@ width="50%"
 />
 
 **Code:** https://github.com/habibun/easy-admin-bundle/tree/v4  
-**Resources:** ~  
+**Resources:**
+ - [EasyAdmin! For an Awesomely Powerful Admin Area](https://symfonycasts.com/screencast/easyadminbundle)
 
 ### Prerequisites
 - [Symfony CLI][symfony_cli], [PHP][php], [Composer][composer], [Git][git], [MySQL][mysql], [Node.js][node]
 
 ### Installation
-```bash
+
+```bash 
+# Clone the repository using the command
 git clone git@github.com:habibun/easy-admin-bundle.git
+
+# Navigate into the cloned directory
 cd easy-admin-bundle
+
+# Checkout to project branch
 git checkout v4
-symfony composer install
-yarn install
+
+# Create .env.local file
+make init
 ```
 
-</p>
+Configure the database connection in the .env.local file
+
+```bash 
+# Install project
+make install
+
+# Start the local development server
+make start
+```
+
+Please check more rules in [Makefile][v4_makefile].
 
 ##
 </details>
 
 
-<details><summary>Simple application using EasyAdminBundle v2</summary>  
-<p>  
+<details><summary>Simple application using EasyAdminBundle v2</summary>
 
 <img
 src="https://user-images.githubusercontent.com/5810350/226255064-bba19bae-ac88-4ea3-a010-97abb549118c.png"
@@ -51,14 +67,14 @@ width="50%"
 />
 
 **Code:** https://github.com/habibun/easy-admin-bundle/tree/v2  
-**Resources:** ~  
+**Resources:**
+- [EasyAdminBundle v1 for an Amazing Admin Interface](https://symfonycasts.com/screencast/easyadminbundle1)
 
 
 ### Prerequisites
 [Symfony CLI][symfony_cli], [PHP][php], [Composer][composer], [Git][git], [MySQL][mysql]
 
 ### Installation
-
 
 ```bash 
 # Clone the repository using the command
@@ -86,8 +102,6 @@ make start
 
 Please check more rules in [Makefile][v2_makefile].
 
-</p>
-
 ##
 </details>
 
@@ -113,6 +127,7 @@ Distributed under the MIT License. See **[LICENSE][license]** for more informati
 
 [v4]: https://github.com/habibun/easy-admin-bundle/tree/v4
 [v4_tt]: https://github.com/habibun/easy-admin-bundle/tree/v4 "Simple application using EasyAdminBundle v4"
+[v4_makefile]: https://github.com/habibun/easy-admin-bundle/blob/v4/Makefile
 
 [v2]: https://github.com/habibun/easy-admin-bundle/tree/v2
 [v2_tt]: https://github.com/habibun/easy-admin-bundle/tree/v2 "Simple application using EasyAdminBundle v2"
