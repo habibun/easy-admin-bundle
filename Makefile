@@ -19,7 +19,7 @@ reset-db: ## reset database
 .PHONY: start
 start: ## start
 	yarn run build
-	symfony server -d
+	symfony serve -d
 
 .PHONY: log
 log: ## log
