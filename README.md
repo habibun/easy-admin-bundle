@@ -84,7 +84,7 @@ make install
 make start
 ```
 
-Check more rules in [Makefile][v2_makefile].
+Please check more rules in [Makefile][v2_makefile].
 
 </p>
 
