@@ -55,61 +55,36 @@ width="50%"
 
 
 ### Prerequisites
-- [Symfony CLI][symfony_cli], [PHP][php], [Composer][composer], [Git][git], [MySQL][mysql]
+[Symfony CLI][symfony_cli], [PHP][php], [Composer][composer], [Git][git], [MySQL][mysql]
 
 ### Installation
-Clone the repository using the command:  
+
+
 ```bash 
+# Clone the repository using the command
 git clone git@github.com:habibun/easy-admin-bundle.git
-```
 
-Navigate into the cloned directory:
-```bash 
+# Navigate into the cloned directory
 cd easy-admin-bundle
-```
 
-Checkout: 
-```bash 
+# Checkout to project branch
 git checkout v2
+
+# Create .env.local file
+make init
 ```
 
-#### Manual Instruction
+Configure the database connection in the .env.local file
 
-Install the required dependencies using Composer:
 ```bash 
-symfony composer install
+# Install project
+make install
+
+# Start the local development server
+make start
 ```
 
-Create .env.local file:
-```bash 	
-cp -u -p .env .env.local
-```
-
-Configure the database connection in the .env.local file:
-`DATABASE_URL=mysql://db_user:db_password@db_host/db_name`
-
-Create the database schema:
-`symfony console doctrine:schema:create`
-
-Migrate db:
-`symfony console doctrine:migrations:migrate -n`
-
-Load sample data into the database:
-`symfony console doctrine:fixtures:load -n`
-
-Start the local development server:
-`symfony server:start `
-
-#### Makefile Instruction
-Create .env.local file:
-`make init`
-
-Install project:
-`make install`
-
-This will run the same commands as the manual installation process described above.  
-Once the installation is complete, start the local development server:
-`make start`
+Check more rules in [Makefile][v2_makefile].
 
 </p>
 
@@ -141,6 +116,7 @@ Distributed under the MIT License. See **[LICENSE][license]** for more informati
 
 [v2]: https://github.com/habibun/easy-admin-bundle/tree/v2
 [v2_tt]: https://github.com/habibun/easy-admin-bundle/tree/v2 "Simple application using EasyAdminBundle v2"
+[v2_makefile]: (https://github.com/habibun/easy-admin-bundle/blob/v2/Makefile)
 
 [symfony_cli]: https://symfony.com/download
 [php]: https://www.php.net/
