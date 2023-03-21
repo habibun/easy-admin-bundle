@@ -116,7 +116,7 @@ Distributed under the MIT License. See **[LICENSE][license]** for more informati
 
 [v2]: https://github.com/habibun/easy-admin-bundle/tree/v2
 [v2_tt]: https://github.com/habibun/easy-admin-bundle/tree/v2 "Simple application using EasyAdminBundle v2"
-[v2_makefile]: (https://github.com/habibun/easy-admin-bundle/blob/v2/Makefile)
+[v2_makefile]: https://github.com/habibun/easy-admin-bundle/blob/v2/Makefile
 
 [symfony_cli]: https://symfony.com/download
 [php]: https://www.php.net/
