@@ -17,4 +17,9 @@ reset-db: ## reset database
 
 .PHONY: start
 start: ## start
-	symfony serve -d
+	symfony server:start
+
+.PHONY: log
+log: ## log
+	symfony server:log
+	
